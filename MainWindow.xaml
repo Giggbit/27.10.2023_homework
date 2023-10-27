@@ -5,26 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_27._09._2023_Команды"
         mc:Ignorable="d"
-        Title="EditMenu" Height="400" Width="550">
+        Title="EditMenu" Height="400" Width="550" WindowStartupLocation="CenterScreen">
+    
     <Grid>
         <Menu Height="25" VerticalAlignment="Top" TextBlock.FontSize="16">
             <MenuItem Header="File">
-                <MenuItem Command="New"/>
-                <MenuItem Command="Open"/>
-                <MenuItem Command="Save"/>
+                <MenuItem Name="newMenuItem" Command="New"/>
+                <MenuItem Name="openMenuItem" Command="Open"/>
+                <MenuItem Name="saveMenuItem" Command="Save"/>
                 <Separator/>
                 <MenuItem Command="Close"/>
             </MenuItem>
 
             <MenuItem Header="Edit">
-                <MenuItem Command="Cut"/>
-                <MenuItem Command="Copy"/>
-                <MenuItem Command="Paste"/>
+                <MenuItem Name="cutMenuItem" Command="Cut"/>
+                <MenuItem Name="copyMenuItem" Command="Copy"/>
+                <MenuItem Name="pasteMenuItem" Command="Paste"/>
             </MenuItem>
             
-            <MenuItem Header="Register"/>
+            <MenuItem Header="Register" Click="MenuItem_Click"/>
         </Menu>
 
-        <TextBox x:Name="textBox" Margin="10,35,10,10" TextBlock.FontSize="16" TextWrapping="Wrap"/>
+        <TextBox x:Name="textBox" Margin="10,35,10,10" TextBlock.FontSize="16" TextWrapping="Wrap" 
+                 TextChanged="textBox_TextChanged"/>
     </Grid>
 </Window>
